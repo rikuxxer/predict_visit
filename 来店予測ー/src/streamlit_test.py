@@ -157,8 +157,22 @@ input_df = pd.DataFrame([[input_feature_1,
 # 全ての必要な入力がされているかどうかをチェック
 is_input_complete = potential > 0 and streaming_days > 0 and mesureing_days > 0 and T_radius and mesurement_visit and TG_Iloc
 
+import os
+
+# スクリプトファイルの絶対パスを取得
+script_path = os.path.abspath(__file__)
+
+# スクリプトファイルが存在するディレクトリのパスを取得
+script_dir = os.path.dirname(script_path)
+
+# スクリプトディレクトリから相対的にファイルのパスを指定
+relative_path = 'data/gb_model.joblib'
+
+# 最終的なファイルの絶対パスを生成
+file_path = os.path.join(script_dir, relative_path)
+
 # モデルの読み込み
-gb_model = load('gb_model.joblib')
+gb_model = load('file_path')
 
 # 予測ボタン（条件に応じて無効化）
 if is_input_complete and st.button('予測'):
