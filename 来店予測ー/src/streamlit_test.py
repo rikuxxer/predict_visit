@@ -174,9 +174,6 @@ file_path = os.path.join(script_dir, relative_path)
 # file_pathを使用してファイルを読み込む
 gb_model = load(file_path)
 
-#注意文
-st.info("※上記数値は想定値となり、実際の配信金額と異なる場合がございます。"
-
 # 予測ボタン（条件に応じて無効化）
 if is_input_complete and st.button('予測'):
     # モデルを使用して予測を行う
