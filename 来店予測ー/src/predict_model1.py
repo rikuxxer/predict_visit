@@ -1,4 +1,4 @@
-# ライブラリの読み込み
+# ライブラリインストール
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
