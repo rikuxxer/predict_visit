@@ -185,6 +185,7 @@ if is_input_complete and st.button('予測'):
     # 予測結果の表示（パーセント表示）
     predicted_percentage = prediction[0] * 100  # 予測結果を100倍してパーセント表示に
     st.metric(label="予想来店率", value=f"{predicted_percentage:.2f}%")
+    st.info("※上記数値は想定値となり、実際の配信金額と異なる場合がございます。")
 else:
     # 入力が完了していない場合はメッセージを表示
     st.warning("全ての入力項目を完了してください。")       
