@@ -177,7 +177,7 @@ gb_model = load(file_path)
 # 予測ボタン（条件に応じて無効化）
 if is_input_complete and st.button('予測'):
     # '1番近いTG距離'が90km以上の場合は来店率を0.00001にする
-    if closest_distances_top5[0] >= 90:
+    if  input_feature_7 >= 90:
         predicted_percentage = 0.00001 * 100  # 0.00001をパーセント表示に変換
         st.metric(label="予想来店率", value=f"{predicted_percentage:.5f}%")
         st.info("※指定された距離に基づき、来店率は0.001%と予測されます。")
