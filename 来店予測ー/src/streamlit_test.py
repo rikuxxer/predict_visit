@@ -35,8 +35,8 @@ measurement_location_2 = tuple(map(float, mesurement_visit.split(',')))
 TG_Iloc = st.sidebar.text_area("▼TG地点の緯度経度 \n（例: 35.681236, 139.767125）\n複数入力する場合は改行してください。", "35.681236, 139.767125\n35.6553809, 139.7571289\n33.5897275, 130.4207274", key="TG_Iloc")
 TG_locations = [tuple(map(float, loc.split(','))) for loc in TG_Iloc.strip().split('\n')]
 
-# 各TG地点と計測地点間の距離を計算
-distances = [geodesic(measurement_location_2, tg_loc).kilometers for tg_loc in TG_locations]
+# 各TG地点と最初の計測地点間の距離を計算
+distances = [geodesic(measurment_location1[0], tg_loc).kilometers for tg_loc in TG_locations]
 
 # 各TG地点と計測地点間の距離を計算
 sorted_distances = sorted(distances)
