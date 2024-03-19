@@ -66,7 +66,6 @@ input_feature_13 = furthest_distances_top5[-2] if len(furthest_distances_top5) >
 input_feature_14 = furthest_distances_top5[-3] if len(furthest_distances_top5) > 2 else 0
 input_feature_15 = furthest_distances_top5[-4] if len(furthest_distances_top5) > 3 else 0
 input_feature_16 = furthest_distances_top5[-5] if len(furthest_distances_top5) > 4 else 0
-input_features_updated
 
 
 
