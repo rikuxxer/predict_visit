@@ -119,6 +119,8 @@ input_feature_14 = furthest_distances_top5[-3]
 input_feature_15 = furthest_distances_top5[-4]
 input_feature_16 = furthest_distances_top5[-5]
 
+print(closest_distances_top5)
+
 # 入力値をデータフレームに変換
 input_df = pd.DataFrame([[input_feature_1,
                           input_feature_2,
