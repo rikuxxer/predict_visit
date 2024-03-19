@@ -166,7 +166,7 @@ script_path = os.path.abspath(__file__)
 script_dir = os.path.dirname(script_path)
 
 # スクリプトディレクトリから相対的にファイルのパスを指定
-relative_path = 'data/gb_model.joblib'
+relative_path = '来店予測ー/src/predict_model1.py/gb_model.joblib'
 
 # 最終的なファイルの絶対パスを生成
 file_path = os.path.join(script_dir, relative_path)
