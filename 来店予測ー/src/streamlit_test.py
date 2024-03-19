@@ -119,8 +119,6 @@ input_feature_14 = furthest_distances_top5[-3]
 input_feature_15 = furthest_distances_top5[-4]
 input_feature_16 = furthest_distances_top5[-5]
 
-print(closest_distances_top5)
-
 # 入力値をデータフレームに変換
 input_df = pd.DataFrame([[input_feature_1,
                           input_feature_2,
@@ -175,8 +173,6 @@ file_path = os.path.join(script_dir, relative_path)
 
 # file_pathを使用してファイルを読み込む
 gb_model = load(file_path)
-
-st.write(input_feature_7)
 
 # 予測ボタン（条件に応じて無効化）
 if is_input_complete and st.button('予測'):
