@@ -49,24 +49,23 @@ else:
     average_distance = 0
     median_distance = 0
 
-# 条件を変更して、リストに含まれる要素が1つでも対応する変数に格納するように修正
-closest_distances_top5 = sorted_distances[:5] if len(sorted_distances) >= 1 else [0] * 5
-furthest_distances_top5 = sorted_distances[-5:] if len(sorted_distances) >= 1 else [0] * 5
+# 最も近い距離のトップ5と最も遠い距離のトップ5を取得する際に、リストの長さを確認
+closest_distances_top5 = sorted_distances[:5] if len(sorted_distances) >= 5 else [0] * 5
+furthest_distances_top5 = sorted_distances[-5:] if len(sorted_distances) >= 5 else [0] * 5
 
-# 格納された数値が空（リストが空の場合を含む）の場合に0を出力する条件を適用
-input_features_updated = {
-    "input_feature_7": closest_distances_top5[0] if len(closest_distances_top5) > 0 else 0,
-    "input_feature_8": closest_distances_top5[1] if len(closest_distances_top5) > 1 else 0,
-    "input_feature_9": closest_distances_top5[2] if len(closest_distances_top5) > 2 else 0,
-    "input_feature_10": closest_distances_top5[3] if len(closest_distances_top5) > 3 else 0,
-    "input_feature_11": closest_distances_top5[4] if len(closest_distances_top5) > 4 else 0,
-    "input_feature_12": furthest_distances_top5[-1] if len(furthest_distances_top5) > 0 else 0,
-    "input_feature_13": furthest_distances_top5[-2] if len(furthest_distances_top5) > 1 else 0,
-    "input_feature_14": furthest_distances_top5[-3] if len(furthest_distances_top5) > 2 else 0,
-    "input_feature_15": furthest_distances_top5[-4] if len(furthest_distances_top5) > 3 else 0,
-    "input_feature_16": furthest_distances_top5[-5] if len(furthest_distances_top5) > 4 else 0,
-}
-
+# 格納された数値が空（リストが空の場合を含む）の場合に0を出力
+input_feature_5 = average_distance
+input_feature_6 = median_distance
+input_feature_7 = closest_distances_top5[0] if len(closest_distances_top5) > 0 else 0
+input_feature_8 = closest_distances_top5[1] if len(closest_distances_top5) > 1 else 0
+input_feature_9 = closest_distances_top5[2] if len(closest_distances_top5) > 2 else 0
+input_feature_10 = closest_distances_top5[3] if len(closest_distances_top5) > 3 else 0
+input_feature_11 = closest_distances_top5[4] if len(closest_distances_top5) > 4 else 0
+input_feature_12 = furthest_distances_top5[-1] if len(furthest_distances_top5) > 0 else 0
+input_feature_13 = furthest_distances_top5[-2] if len(furthest_distances_top5) > 1 else 0
+input_feature_14 = furthest_distances_top5[-3] if len(furthest_distances_top5) > 2 else 0
+input_feature_15 = furthest_distances_top5[-4] if len(furthest_distances_top5) > 3 else 0
+input_feature_16 = furthest_distances_top5[-5] if len(furthest_distances_top5) > 4 else 0
 input_features_updated
 
 
