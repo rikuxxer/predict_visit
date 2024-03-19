@@ -183,6 +183,7 @@ if is_input_complete and st.button('予測'):
     predicted_percentage = prediction[0] * 100  # 予測結果を100倍してパーセント表示に
     st.metric(label="予想来店率", value=f"{predicted_percentage:.2f}%")
     st.info("※上記数値は想定値となり、実際の来店率と異なる場合がございます。")
+    st.info("※TGがエリア指定の場合や滞在時間の条件指定がある場合は数値の変動が大きくなります。")
 else:
     # 入力が完了していない場合はメッセージを表示
     st.warning("全ての入力項目を完了してください。")       
