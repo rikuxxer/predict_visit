@@ -74,8 +74,6 @@ input_feature_15 = furthest_distances_top5[-4] if len(furthest_distances_top5) >
 input_feature_16 = furthest_distances_top5[-5] if len(furthest_distances_top5) > 4 else 0
 
 
-
-
 # 入力されたテキストを改行で分割し、緯度経度のペアのリストを作成
 TG_locations = [tuple(map(float, loc.split(','))) for loc in TG_Iloc.strip().split('\n')]
 
@@ -113,19 +111,6 @@ input_feature_2 = streaming_days
 input_feature_3 = mesureing_days
 input_feature_4 = potential
 
-# 結果を変数に格納
-input_feature_5 = average_distance
-input_feature_6 = median_distance
-input_feature_7 = closest_distances_top5[0]
-input_feature_8 = closest_distances_top5[1]
-input_feature_9 = closest_distances_top5[2]
-input_feature_10 = closest_distances_top5[3]
-input_feature_11 = closest_distances_top5[4]
-input_feature_12 = furthest_distances_top5[-1]
-input_feature_13 = furthest_distances_top5[-2]
-input_feature_14 = furthest_distances_top5[-3]
-input_feature_15 = furthest_distances_top5[-4]
-input_feature_16 = furthest_distances_top5[-5]
 
 # 入力値をデータフレームに変換
 input_df = pd.DataFrame([[input_feature_1,
