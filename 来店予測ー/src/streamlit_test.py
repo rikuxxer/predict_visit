@@ -26,7 +26,7 @@ T_radius = st.sidebar.selectbox("▼TG半径(m)",("50","100","200","300","400","
 
 # 計測地点の入力
 
-mesurement_visit = st.sidebar.text_area("▼ 計測地点の緯度経度 \n（例: 35.681236, 139.767125）", "35.681236, 139.767125", key="mesurement_visit")
+mesurement_visit = st.sidebar.text_area("▼ 計測地点の緯度経度 \n（例: 35.681236, 139.767125）", "35.1455957,136.9933597", key="mesurement_visit")
 measurment_location1 = [tuple(map(float, loc.split(','))) for loc in mesurement_visit.strip().split('\n')]
 measurement_location_2 = tuple(map(float, mesurement_visit.split(',')))
 
