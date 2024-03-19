@@ -50,8 +50,8 @@ else:
     median_distance = 0
 
 # 最も近い距離のトップ5と最も遠い距離のトップ5を取得する際に、リストの長さを確認
-closest_distances_top5 = sorted_distances[:5] if len(sorted_distances) >= 5 else [0] * 5
-furthest_distances_top5 = sorted_distances[-5:] if len(sorted_distances) >= 5 else [0] * 5
+closest_distances_top5 = sorted_distances[:5] if len(sorted_distances) >= 1 else [0] * 5
+furthest_distances_top5 = sorted_distances[-5:] if len(sorted_distances) >= 1 else [0] * 5
 
 # 格納された数値が空（リストが空の場合を含む）の場合に0を出力
 input_feature_5 = average_distance
