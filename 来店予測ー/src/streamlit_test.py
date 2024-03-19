@@ -159,19 +159,19 @@ is_input_complete = potential > 0 and streaming_days > 0 and mesureing_days > 0 
 
 import os
 
-# スクリプトファイルの絶対パスを取得
+# スクリプトの絶対パスを取得
 script_path = os.path.abspath(__file__)
 
-# スクリプトファイルが存在するディレクトリのパスを取得
+# スクリプトがあるディレクトリを取得
 script_dir = os.path.dirname(script_path)
 
-# スクリプトディレクトリから相対的にファイルのパスを指定
-relative_path = '来店予測ー/src/predict_model1.py/gb_model.joblib'
+# ターゲットファイルへの相対パス
+relative_path = 'gb_model.joblib'
 
-# 最終的なファイルの絶対パスを生成
+# ターゲットファイルの絶対パスを生成
 file_path = os.path.join(script_dir, relative_path)
 
-# モデルの読み込み
+# file_pathを使用してファイルを読み込む
 gb_model = load(file_path)
 
 # 予測ボタン（条件に応じて無効化）
