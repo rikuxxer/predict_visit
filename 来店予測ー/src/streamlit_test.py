@@ -53,19 +53,26 @@ else:
 closest_distances_top5 = sorted_distances[:5] if len(sorted_distances) >= 1 else [0] * 5
 furthest_distances_top5 = sorted_distances[-5:] if len(sorted_distances) >= 1 else [0] * 5
 
-# 格納された数値が空（リストが空の場合を含む）の場合に0を出力
+# 各特徴量に対して、リストの長さを確認し、適切な値を割り当てる
 input_feature_5 = average_distance
 input_feature_6 = median_distance
+
+# 最初の要素（存在すれば）を input_feature_7 に割り当て
 input_feature_7 = closest_distances_top5[0] if len(closest_distances_top5) > 0 else 0
+
+# input_feature_8 から input_feature_11 まで、リストの長さに基づいて値を割り当てる
 input_feature_8 = closest_distances_top5[1] if len(closest_distances_top5) > 1 else 0
 input_feature_9 = closest_distances_top5[2] if len(closest_distances_top5) > 2 else 0
 input_feature_10 = closest_distances_top5[3] if len(closest_distances_top5) > 3 else 0
 input_feature_11 = closest_distances_top5[4] if len(closest_distances_top5) > 4 else 0
+
+# furthest_distances_top5 に基づいて、最も遠い距離の特徴量を割り当て
 input_feature_12 = furthest_distances_top5[-1] if len(furthest_distances_top5) > 0 else 0
 input_feature_13 = furthest_distances_top5[-2] if len(furthest_distances_top5) > 1 else 0
 input_feature_14 = furthest_distances_top5[-3] if len(furthest_distances_top5) > 2 else 0
 input_feature_15 = furthest_distances_top5[-4] if len(furthest_distances_top5) > 3 else 0
 input_feature_16 = furthest_distances_top5[-5] if len(furthest_distances_top5) > 4 else 0
+
 
 
 
