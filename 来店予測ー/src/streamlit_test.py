@@ -176,14 +176,19 @@ gb_model = load(file_path)
 
 # 予測ボタン（条件に応じて無効化）
 if is_input_complete and st.button('予測'):
-    # モデルを使用して予測を行う
-    prediction = gb_model.predict(input_df)
-    
-    # 予測結果の表示（パーセント表示）
-    predicted_percentage = prediction[0] * 100  # 予測結果を100倍してパーセント表示に
-    st.metric(label="予想来店率", value=f"{predicted_percentage:.2f}%")
-    st.info("※上記数値は想定値となり、実際の来店率と異なる場合がございます。")
-    st.info("※TGがエリア指定の場合や滞在時間の条件指定がある場合は数値の変動が大きくなります。")
+    # '1番近いTG距離'が90km以上の場合は来店率を0.00001にする
+    if closest_distances_top5[0] >= 90:
+        predicted_percentage = 0.00001 * 100  # 0.00001をパーセント表示に変換
+        st.metric(label="予想来店率", value=f"{predicted_percentage:.5f}%")
+        st.info("※指定された距離に基づき、来店率は0.001%と予測されます。")
+    else:
+        # モデルを使用して予測を行う
+        prediction = gb_model.predict(input_df)
+        # 予測結果をパーセント表示に変換
+        predicted_percentage = prediction[0] * 100
+        st.metric(label="予想来店率", value=f"{predicted_percentage:.2f}%")
+        st.info("※上記数値は想定値となり、実際の来店率と異なる場合がございます。")
+        st.info("※TGがエリア指定の場合や滞在時間の条件指定がある場合は数値の変動が大きくなります。")
 else:
     # 入力が完了していない場合はメッセージを表示
-    st.warning("全ての入力項目を完了してください。")       
+    st.warning("全ての入力項目を完了してください。")
