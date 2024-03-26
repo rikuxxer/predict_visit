@@ -84,7 +84,7 @@ def display_map():
 
     # 地図を作成（計測地点を中心）
     if measurment_location1 or TG_locations:
-        m = folium.Map(location=measurment_location1[0] if measurment_location1 else TG_locations[0], tiles="cartodbdark_matter", zoom_start=5)
+        m = folium.Map(location=measurment_location1[0] if measurment_location1 else TG_locations[0], tiles="cartodbpositron", zoom_start=5)
 
         # 計測地点にピンと半径を追加
         for loc in measurment_location1:
